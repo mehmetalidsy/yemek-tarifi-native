@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, FlatList, TextInput, ScrollView, TouchableOpacity } from "react-native";
 import RecipeCard from "../components/RecipeCard";
+import { useApp } from "../src/context/AppContext";
 
-export default function TarifListesi({
-  navigation,
-  toggleFavori,
-  favoriIdler,
-  tarifler,
-}) {
+export default function TarifListesi({ navigation }) {
+  const { toggleFavori, favoriIdler, tarifler } = useApp();
   const [aramaMetni, setAramaMetni] = useState("");
   const [seciliKategori, setSeciliKategori] = useState("Hepsi");
 
@@ -26,8 +23,6 @@ export default function TarifListesi({
       onPress={() =>
         navigation.navigate("TarifDetay", {
           ...item,
-          toggleFavori: toggleFavori,
-          favoriMi: favoriIdler.includes(item.id),
         })
       }
     />

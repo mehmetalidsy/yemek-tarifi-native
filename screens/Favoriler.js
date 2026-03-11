@@ -2,9 +2,10 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import RecipeCard from "../components/RecipeCard";
+import { useApp } from "../src/context/AppContext";
 
-export default function Favoriler({ route, navigation }) {
-  const { favoriIdler, tarifler } = route.params || { favoriIdler: [], tarifler: [] };
+export default function Favoriler({ navigation }) {
+  const { favoriIdler, tarifler } = useApp();
 
   const favoriTarifler = (tarifler || []).filter((tarif) =>
     favoriIdler.includes(tarif.id),
@@ -14,7 +15,7 @@ export default function Favoriler({ route, navigation }) {
     <RecipeCard
       item={item}
       favoriMi={true}
-      onPress={() => navigation.navigate("TarifDetay", { ...item, favoriMi: true })}
+      onPress={() => navigation.navigate("TarifDetay", { ...item })}
     />
   );
 

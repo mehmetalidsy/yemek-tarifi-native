@@ -7,8 +7,10 @@ import {
     KeyboardAvoidingView,
     Platform,
 } from "react-native";
+import { useApp } from "../src/context/AppContext";
 
-export default function Auth({ onLogin }) {
+export default function Auth() {
+    const { setUser } = useApp();
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +21,7 @@ export default function Auth({ onLogin }) {
             return;
         }
         const userData = { email, name: email.split("@")[0] };
-        onLogin(userData);
+        setUser(userData);
     };
 
     return (
