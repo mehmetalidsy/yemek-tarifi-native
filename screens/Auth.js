@@ -54,7 +54,7 @@ export default function Auth() {
 
                 <MyButton
                     text={isLogin ? "Giriş Yap" : "Kayıt Ol"}
-                    className="bg-[#2980B9] h-[50px] rounded-[12px] justify-center items-center mt-2.5"
+                    className="bg-ana h-[50px] rounded-[12px] justify-center items-center mt-2.5"
                     overrideStyles={true}
                     onPress={handleSubmit}
                 />

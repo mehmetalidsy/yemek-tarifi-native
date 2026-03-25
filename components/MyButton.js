@@ -1,3 +1,4 @@
+import { twMerge } from 'tailwind-merge';
 import { TouchableOpacity, Text } from "react-native";
 
 export default function MyButton({ 

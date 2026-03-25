@@ -151,8 +151,8 @@ ${pufNoktalari}
       <View className="flex-row mx-[15px] mt-[15px] gap-3">
         <MyButton
           text={favoriMi ? "Favorilerden Çıkar" : "Favorilere Ekle"}
-          className={`flex-1 p-3.5 rounded-xl shadow-md ${
-            favoriMi ? "bg-[#95A5A6]" : "bg-[#E74C3C]"
+          className={`flex-1 justify-center items-center p-3.5 rounded-xl shadow-md ${
+            favoriMi ? "bg-[#95A5A6]/70" : "bg-ana/70"
           }`}
           style={{ elevation: 4 }}
           icon={
