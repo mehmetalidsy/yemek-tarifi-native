@@ -8,6 +8,7 @@ import {
     Platform,
 } from "react-native";
 import { useApp } from "../src/context/AppContext";
+import MyButton from "../components/MyButton";
 
 export default function Auth() {
     const { setUser } = useApp();
@@ -51,14 +52,12 @@ export default function Auth() {
                     secureTextEntry
                 />
 
-                <TouchableOpacity
+                <MyButton
+                    text={isLogin ? "Giriş Yap" : "Kayıt Ol"}
                     className="bg-[#2980B9] h-[50px] rounded-[12px] justify-center items-center mt-2.5"
+                    overrideStyles={true}
                     onPress={handleSubmit}
-                >
-                    <Text className="color-white text-[18px] font-bold">
-                        {isLogin ? "Giriş Yap" : "Kayıt Ol"}
-                    </Text>
-                </TouchableOpacity>
+                />
 
                 <TouchableOpacity
                     className="mt-5 items-center"

@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
     ScrollView,
 } from "react-native";
+import MyButton from "./MyButton";
 
 const AddModal = ({ visible, onClose, onAddRecipe, onAddCategory }) => {
     const [eklemeTuru, setEklemeTuru] = useState("tarif");
@@ -98,12 +99,7 @@ const AddModal = ({ visible, onClose, onAddRecipe, onAddCategory }) => {
                                         setYeniTarif({ ...yeniTarif, yapilis: text })
                                     }
                                 />
-                                <TouchableOpacity
-                                    className="bg-[#2980B9] p-[15px] rounded-lg items-center"
-                                    onPress={handleRecipeAdd}
-                                >
-                                    <Text className="color-white font-bold text-[16px]">Tarif Ekle</Text>
-                                </TouchableOpacity>
+                                <MyButton text="Tarif Ekle" rounded="lg" onPress={handleRecipeAdd}/>
                             </View>
                         ) : (
                             <View>
@@ -113,12 +109,7 @@ const AddModal = ({ visible, onClose, onAddRecipe, onAddCategory }) => {
                                     value={yeniKategori}
                                     onChangeText={setYeniKategori}
                                 />
-                                <TouchableOpacity
-                                    className="bg-[#2980B9] p-[15px] rounded-lg items-center"
-                                    onPress={handleCategoryAdd}
-                                >
-                                    <Text className="color-white font-bold text-[16px]">Kategori Ekle</Text>
-                                </TouchableOpacity>
+                                <MyButton text="Kategori Ekle" rounded="lg" onPress={handleCategoryAdd}/>
                             </View>
                         )}
 

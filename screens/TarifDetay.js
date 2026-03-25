@@ -14,6 +14,7 @@ import { Ionicons } from "@expo/vector-icons";
 import * as Clipboard from "expo-clipboard";
 import { useApp } from "../src/context/AppContext";
 import { SafeAreaView } from "react-native-safe-area-context";
+import MyButton from "../components/MyButton";
 
 export default function TarifDetay({ route, navigation }) {
   const { isim, sure, malzemeler, yapilis, id } = route.params;
@@ -142,32 +143,31 @@ ${pufNoktalari}
 
   return (
     <ScrollView className="flex-1 bg-[#FDFEFE]">
-      <View className="bg-[#2980B9] p-5 items-center">
+      <View className="bg-ana p-5 items-center">
         <Text className="text-[26px] font-bold text-white text-center">{isim}</Text>
         <Text className="text-[16px] text-[#D6EAF8] mt-1.5">{sure} dakika</Text>
       </View>
 
       <View className="flex-row mx-[15px] mt-[15px] gap-3">
-        <TouchableOpacity
-          className={`flex-1 p-3.5 rounded-xl flex-row justify-center items-center shadow-md ${favoriMi ? "bg-[#95A5A6]" : "bg-[#E74C3C]"
-            }`}
+        <MyButton
+          text={favoriMi ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+          className={`flex-1 p-3.5 rounded-xl shadow-md ${
+            favoriMi ? "bg-[#95A5A6]" : "bg-[#E74C3C]"
+          }`}
           style={{ elevation: 4 }}
+          icon={
+            <Ionicons
+              name={favoriMi ? "heart-dislike" : "heart"}
+              size={22}
+              color="white"
+              style={{ marginRight: 8 }}
+            />
+          }
           onPress={() => {
             toggleFavori(id);
             navigation.goBack();
           }}
-        >
-          <Ionicons
-            name={favoriMi ? "heart-dislike" : "heart"}
-            size={22}
-            color="white"
-            style={{ marginRight: 8 }}
-          />
-          <Text className="text-white text-[16px] font-bold">
-            {favoriMi ? "Favorilerden Çıkar" : "Favorilere Ekle"}
-          </Text>
-        </TouchableOpacity>
-
+        />
         <TouchableOpacity
           className="bg-[#27AE60] p-3.5 rounded-xl justify-center items-center shadow-md"
           style={{ elevation: 4 }}

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "IlkProje",
-    "slug": "IlkProje",
+    "name": "FoodRecipes",
+    "slug": "food-recipes",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,7 +21,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.zweig.IlkProje"
+      "package": "com.foodrecipes.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"

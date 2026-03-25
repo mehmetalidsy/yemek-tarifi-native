@@ -6,7 +6,7 @@ Mobil (Android/iOS) ve Web’de çalışan, **yemek tarifleri** odaklı bir uygu
 
 - **Tarif listesi ve detay ekranı**
 - **Favorilere ekleme/çıkarma**
-- **Yeni tarif ekleme** (uygulama içinden)
+- **Yeni tarif ekleme/düzenleme/silme** (uygulama içinden)
 - **Basit giriş/çıkış** (cihazda saklanır)
 - **Kalıcı veri**: Tarifler ve favoriler `AsyncStorage` ile kaydedilir
 - **NativeWind (Tailwind)** ile stil altyapısı

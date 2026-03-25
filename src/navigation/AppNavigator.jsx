@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { TouchableOpacity, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -11,6 +11,7 @@ import TarifDetay from "../../screens/TarifDetay";
 import Favoriler from "../../screens/Favoriler";
 import Auth from "../../screens/Auth";
 import AddModal from "../../components/AddModal";
+import MyButton from "../../components/MyButton";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -32,12 +33,7 @@ const TariflerStack = () => {
             </TouchableOpacity>
           ),
           headerRight: () => (
-            <TouchableOpacity
-              onPress={() => setModalGorunur(true)}
-              className="mr-[15px] bg-[#2ECC71] px-3 py-1.5 rounded-full shadow-sm"
-            >
-              <Text className="text-white font-bold text-[14px]">Yeni Ekle</Text>
-            </TouchableOpacity>
+            <MyButton text="Yeni Ekle" onPress={() => setModalGorunur(true)}/>
           ),
         }}
       >

@@ -29,9 +29,9 @@ export default function TarifListesi({ navigation }) {
   );
 
   return (
-    <View className="flex-1 bg-[#FDFEFE]">
+    <View className="flex-1 bg-ana">
       <TextInput
-        className="h-[45px] bg-[#F2F3F4] m-[15px] px-[15px] rounded-[10px] text-[16px] border border-[#E5E7E9]"
+        className="h-20 bg-[#F2F3F4] m-3.5  px-3 rounded-[10px] border border-[#E5E7E9]"
         placeholder="Tarif ismiyle ara..."
         value={aramaMetni}
         onChangeText={setAramaMetni}
@@ -43,7 +43,7 @@ export default function TarifListesi({ navigation }) {
             <TouchableOpacity
               key={kat}
               onPress={() => setSeciliKategori(kat)}
-              className={`px-[15px] h-[35px] justify-center rounded-[18px] mx-[5px] ${seciliKategori === kat ? "bg-[#2980B9]" : "bg-[#EBEDEF]"
+              className={`px-[15px] h-[35px] justify-center rounded-[18px] mx-[5px] ${seciliKategori === kat ? "bg-yazi" : "bg-[#EBEDEF]"
                 }`}
             >
               <Text className={`font-semibold ${seciliKategori === kat ? "color-white" : "text-[#566573]"
