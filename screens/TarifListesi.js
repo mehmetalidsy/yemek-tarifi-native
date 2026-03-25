@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, Text, FlatList, TextInput, ScrollView, TouchableOpacity } from "react-native";
 import RecipeCard from "../components/RecipeCard";
 import { useApp } from "../src/context/AppContext";
