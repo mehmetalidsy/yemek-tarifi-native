@@ -90,6 +90,13 @@ NativeWind v4, **TailwindCSS v3** ile çalışır. Bu projede `tailwindcss` sür
 npx expo start -c
 ```
 
+## EAS DERLEME
+
+```bash
+set EAS_NO_VCS=1 && eas build --platform android --profile preview --clear-cache # Command Prompt
+$env:EAS_NO_VCS=1; eas build --platform android --profile preview --clear-cache # PowerShell
+```
+
 ## Lisans
 
-Bu proje eğitim amaçlıdır. İstersen bir lisans ekleyebilirsin (örn. MIT).
+MIT LICENSE
