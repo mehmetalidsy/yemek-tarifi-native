@@ -3,7 +3,7 @@ import React from "react";
 import { View, Text, ActivityIndicator } from "react-native";
 import { AppProvider, useApp } from "./src/context/AppContext";
 import { AppNavigator } from "./src/navigation/AppNavigator";
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const AppContent = () => {
   const { yukleniyor } = useApp();
@@ -24,10 +24,9 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <AppProvider>
-        {/* edges={['top']} sadece üstten boşluk bırakır, kaymayı önler */}
-        <SafeAreaView className="flex-1 bg-white" edges={['top']}>
+        <View className="flex-1 bg-white">
           <AppContent />
-        </SafeAreaView>
+        </View>
       </AppProvider>
     </SafeAreaProvider>
   );

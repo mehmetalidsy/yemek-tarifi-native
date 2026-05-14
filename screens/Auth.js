@@ -7,6 +7,7 @@ import {
     KeyboardAvoidingView,
     Platform,
 } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useApp } from "../src/context/AppContext";
 import MyButton from "../components/MyButton";
 
@@ -26,9 +27,10 @@ export default function Auth() {
     };
 
     return (
+        <SafeAreaView className="flex-1 bg-[#FDFEFE]">
         <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : "height"}
-            className="flex-1 bg-[#FDFEFE] justify-center p-5"
+            className="flex-1 justify-center p-5"
         >
             <View className="bg-white p-[25px] rounded-[20px] shadow-xl" style={{ elevation: 10 }}>
                 <Text className="text-[28px] font-bold text-[#2C3E50] mb-[25px] text-center">
@@ -71,5 +73,6 @@ export default function Auth() {
                 </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>
+        </SafeAreaView>
     );
 }

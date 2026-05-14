@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
 import { useApp } from "../context/AppContext";
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import TarifListesi from "../../screens/TarifListesi";
 import TarifDetay from "../../screens/TarifDetay";
@@ -63,6 +64,7 @@ const TariflerStack = () => {
 
 const TabNavigator = () => {
   const { favoriIdler, tarifler } = useApp();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tab.Navigator
@@ -71,7 +73,7 @@ const TabNavigator = () => {
         tabBarActiveTintColor: "#2980B9",
         tabBarInactiveTintColor: "#95A5A6",
         tabBarLabelStyle: { fontWeight: "bold", fontSize: 11 },
-        tabBarStyle: { height: 60, paddingBottom: 10, paddingTop: 5 },
+        tabBarStyle: { height: 60 + insets.bottom, paddingBottom: insets.bottom, paddingTop: 5 },
         tabBarIcon: ({ color, size }) => {
           const iconName = route.name === "TariflerTab" ? "restaurant" : "heart";
           return <Ionicons name={iconName} size={size} color={color} />;
