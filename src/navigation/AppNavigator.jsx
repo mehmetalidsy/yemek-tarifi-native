@@ -1,5 +1,5 @@
-import React, { Children } from "react";
-import { TouchableOpacity, Text } from "react-native";
+import React from "react";
+import { View, TouchableOpacity, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -10,6 +10,7 @@ import TarifListesi from "../../screens/TarifListesi";
 import TarifDetay from "../../screens/TarifDetay";
 import Favoriler from "../../screens/Favoriler";
 import Auth from "../../screens/Auth";
+import QrScreen from "../../screens/QrScreen";
 import AddModal from "../../components/AddModal";
 import MyButton from "../../components/MyButton";
 
@@ -23,7 +24,7 @@ const TariflerStack = () => {
     <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: "#FDFEFE" } }}>
       <Stack.Screen
         name="TarifListesi"
-        options={{
+        options={({ navigation }) => ({
           headerTitle: "Mutfak Rehberi",
           headerTitleStyle: { fontWeight: "bold", color: "#2C3E50" },
           headerLeft: () => (
@@ -33,9 +34,14 @@ const TariflerStack = () => {
             </TouchableOpacity>
           ),
           headerRight: () => (
-            <MyButton text="Yeni Ekle" onPress={() => setModalGorunur(true)}/>
+            <View className="flex-row items-center gap-2 mr-2.5">
+              <TouchableOpacity onPress={() => navigation.navigate("QrScreen")}>
+                <Ionicons name="qr-code-outline" size={24} color="#2980B9" />
+              </TouchableOpacity>
+              <MyButton text="Yeni Ekle" onPress={() => setModalGorunur(true)}/>
+            </View>
           ),
-        }}
+        })}
       >
         {(props) => (
           <TarifListesi {...props} />
@@ -45,6 +51,11 @@ const TariflerStack = () => {
         name="TarifDetay"
         component={TarifDetay}
         options={({ route }) => ({ title: route.params.isim })}
+      />
+      <Stack.Screen
+        name="QrScreen"
+        component={QrScreen}
+        options={{ title: "QR Kodlar" }}
       />
     </Stack.Navigator>
   );
